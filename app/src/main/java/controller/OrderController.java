@@ -33,7 +33,7 @@ public class OrderController {
         } catch (RuntimeException e) {
             // Return HTTP 400 Bad Request if stock is low or user not found
             // In a real app, you would use a global @ControllerAdvice for this
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
